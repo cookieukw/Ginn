@@ -1,0 +1,545 @@
+[
+  {
+    "name": "Size",
+    "options": [
+      "Microscopic",
+      "Tiny",
+      "Small",
+      "Medium",
+      "Large",
+      "Huge",
+      "Enormous"
+    ]
+  },
+  {
+    "name": "Diet",
+    "options": ["Herbivorous", "Carnivorous", "Omnivorous"]
+  },
+  {
+    "name": "Habitat",
+    "options": [
+      "Savanna",
+      "Forest",
+      "Desert",
+      "Tundra",
+      "Jungle",
+      "Ocean",
+      "Grassland"
+    ]
+  },
+  {
+    "name": "Reproduction",
+    "options": ["Viviparous", "Oviparous", "Asexual", "Parthenogenesis"]
+  },
+  {
+    "name": "Social Behavior",
+    "options": ["Solitary", "Group Living", "Swarm Behavior", "Herd Behavior"]
+  },
+  {
+    "name": "Lifespan",
+    "options": ["Short", "Moderate", "Long", "Very Long"]
+  },
+  {
+    "name": "Locomotion",
+    "options": ["Bipedal", "Quadrupedal", "Swimming", "Flying", "Crawling"]
+  },
+  {
+    "name": "Predators",
+    "options": ["Lions", "Tigers", "Hyenas", "Sharks", "Eagles", "None"]
+  },
+  {
+    "name": "Color",
+    "options": [
+      "Brown",
+      "Gray",
+      "Black",
+      "White",
+      "Spotted",
+      "Striped",
+      "Green",
+      "Red",
+      "Blue",
+      "Yellow"
+    ]
+  },
+  {
+    "name": "Preferred Climate",
+    "options": ["Tropical", "Temperate", "Polar", "Arid", "Subtropical"]
+  },
+  {
+    "name": "Activity Cycle",
+    "options": ["Diurnal", "Nocturnal", "Crepuscular"]
+  },
+  {
+    "name": "Dental Formula",
+    "options": ["Heterodont", "Homodont"]
+  },
+  {
+    "name": "Communication",
+    "options": [
+      "Vocalization",
+      "Chemical Signals",
+      "Visual Signals",
+      "Tactile Signals"
+    ]
+  },
+  {
+    "name": "Territorial Behavior",
+    "options": ["Aggressive", "Passive", "Marking"]
+  },
+  {
+    "name": "Reproductive Strategy",
+    "options": ["K-selection", "r-selection"]
+  },
+  {
+    "name": "Longevity",
+    "options": ["Very Short", "Short", "Moderate", "Long", "Very Long"]
+  },
+  {
+    "name": "Migratory",
+    "options": ["Non-Migratory", "Partial Migratory", "Long-Distance Migratory"]
+  },
+  {
+    "name": "Gestation Period",
+    "options": ["Short", "Moderate", "Long"]
+  },
+  {
+    "name": "Biome",
+    "options": [
+      "Tropical Rainforest",
+      "Savanna",
+      "Marine",
+      "Freshwater",
+      "Tundra"
+    ]
+  },
+  {
+    "name": "Tail Length",
+    "options": ["Short", "Moderate", "Long"]
+  },
+  {
+    "name": "Tail Hair",
+    "options": ["Sparse", "Moderate", "Thick"]
+  },
+  {
+    "name": "Trunk Length",
+    "options": ["Short", "Moderate", "Long"]
+  },
+  {
+    "name": "Trunk Dexterity",
+    "options": ["Low", "Moderate", "High"]
+  },
+  {
+    "name": "Trunk Uses",
+    "options": ["Grasping", "Drinking", "Tool Use"]
+  },
+  {
+    "name": "Number of Offspring",
+    "options": ["Single", "Few", "Many"]
+  },
+  {
+    "name": "Hunting Technique",
+    "options": ["Ambush", "Pursuit", "Cooperative Hunting"]
+  },
+  {
+    "name": "Metamorphosis",
+    "options": ["Complete", "Incomplete"]
+  },
+  {
+    "name": "Scent Marking",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Nesting Behavior",
+    "options": ["Burrow", "Cavity Nest", "Platform Nest"]
+  },
+  {
+    "name": "Territory Size",
+    "options": ["Small", "Moderate", "Large"]
+  },
+  {
+    "name": "Main Food Source",
+    "options": [
+      "Grasses",
+      "Leaves",
+      "Fruits",
+      "Insects",
+      "Fish",
+      "Small Mammals",
+      "Plankton"
+    ]
+  },
+  {
+    "name": "Camouflage",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Migration Pattern",
+    "options": ["Altitudinal", "Latitudinal", "Cyclic"]
+  },
+  {
+    "name": "Preening Behavior",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Territorial Markers",
+    "options": ["Urine Marking", "Scent Glands", "Scratching Trees"]
+  },
+  {
+    "name": "Group Size",
+    "options": ["Solitary", "Pairs", "Small Groups", "Large Herds", "Colonies"]
+  },
+  {
+    "name": "Climbing Ability",
+    "options": ["Arboreal", "Scansorial", "Terrestrial"]
+  },
+  {
+    "name": "Mating System",
+    "options": ["Monogamy", "Polygamy", "Polyandry"]
+  },
+  {
+    "name": "Antler Shedding",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Lactation Period",
+    "options": ["Short", "Moderate", "Long"]
+  },
+  {
+    "name": "Egg Clutch Size",
+    "options": ["Small", "Moderate", "Large"]
+  },
+  {
+    "name": "Territoriality",
+    "options": ["Highly Territorial", "Low Territoriality", "Home Range"]
+  },
+  {
+    "name": "Hibernation",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Tail Shape",
+    "options": ["Bushy", "Tapered", "Flat"]
+  },
+  {
+    "name": "Horn Length",
+    "options": ["Short", "Long"]
+  },
+  {
+    "name": "Specialized Appendages",
+    "options": [
+      "Antennae",
+      "Claws",
+      "Pincers",
+      "Siphons",
+      "Proboscis",
+      "Barbels"
+    ]
+  },
+  {
+    "name": "Reproductive Isolation",
+    "options": [
+      "Geographic Barriers",
+      "Behavioral Barriers",
+      "Temporal Barriers"
+    ]
+  },
+  {
+    "name": "Body Shape",
+    "options": ["Fusiform", "Compressed", "Cylindrical", "Depressed"]
+  },
+  {
+    "name": "Sensory Organs",
+    "options": ["Keen Sense of Smell", "Echolocation", "Thermal Sensors"]
+  },
+  {
+    "name": "Nest Type",
+    "options": ["Ground Nest", "Tree Nest", "Burrow", "Cave Nest"]
+  },
+  {
+    "name": "Dietary Preference",
+    "options": [
+      "Frugivore",
+      "Insectivore",
+      "Piscivore",
+      "Molluscivore",
+      "Nectarivore"
+    ]
+  },
+  {
+    "name": "Hunting Strategy",
+    "options": ["Stalking", "Ambushing", "Chasing"]
+  },
+  {
+    "name": "Migratory Destination",
+    "options": ["Breeding Grounds", "Wintering Grounds", "Feeding Grounds"]
+  },
+  {
+    "name": "Color Change",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Nesting Site",
+    "options": ["Rock Crevices", "Hollow Trees", "Ground", "Leaf Litter"]
+  },
+  {
+    "name": "Territorial Defense",
+    "options": ["Physical Aggression", "Vocal Displays", "Scent Marking"]
+  },
+  {
+    "name": "Breeding Interval",
+    "options": ["Yearly", "Seasonal", "Irregular"]
+  },
+  {
+    "name": "Mimicry",
+    "options": ["Batesian Mimicry", "Müllerian Mimicry"]
+  },
+  {
+    "name": "Burrowing Behavior",
+    "options": ["Solitary Burrower", "Group Burrower"]
+  },
+  {
+    "name": "Egg Color",
+    "options": ["White", "Brown", "Speckled"]
+  },
+  {
+    "name": "Offspring Dependency",
+    "options": ["Precocial", "Altricial"]
+  },
+  {
+    "name": "Flight Pattern",
+    "options": ["Gliding", "Soaring", "Hovering"]
+  },
+  {
+    "name": "Wing Shape",
+    "options": ["Elliptical", "High Aspect Ratio", "Swept-Back"]
+  },
+  {
+    "name": "Clutch Size",
+    "options": ["Small", "Moderate", "Large"]
+  },
+  {
+    "name": "Breeding Display",
+    "options": ["Mating Dance", "Vocal Display", "Ornamental Plumage"]
+  },
+  {
+    "name": "Fur Texture",
+    "options": ["Soft", "Coarse", "Woolly"]
+  },
+  {
+    "name": "Hive Structure",
+    "options": ["Hexagonal Cells", "Wax Combs"]
+  },
+  {
+    "name": "Migratory Behavior",
+    "options": [
+      "No Migration",
+      "Altitudinal Migration",
+      "Latitudinal Migration"
+    ]
+  },
+  {
+    "name": "Defensive Mechanism",
+    "options": ["Camouflage", "Mimicry", "Spines", "Spraying", "Fangs"]
+  },
+  {
+    "name": "Web Type",
+    "options": ["Orb Webs", "Sheet Webs", "Funnel Webs"]
+  },
+  {
+    "name": "Offspring Care",
+    "options": ["Parental Care", "No Parental Care", "Cooperative Care"]
+  },
+  {
+    "name": "Molt Pattern",
+    "options": ["Ecdysis", "Incomplete Metamorphosis"]
+  },
+  {
+    "name": "Habitat Destruction",
+    "options": ["Deforestation", "Urbanization", "Mining", "Pollution"]
+  },
+  {
+    "name": "Physiological Adaptations",
+    "options": ["Hibernation", "Aestivation", "Countercurrent Exchange"]
+  },
+  {
+    "name": "Symbiotic Relationships",
+    "options": ["Mutualism", "Commensalism", "Parasitism"]
+  },
+  {
+    "name": "Feeding Mechanism",
+    "options": ["Filter Feeding", "Suction Feeding", "Ripping", "Scavenging"]
+  },
+  {
+    "name": "Reproductive Anatomy",
+    "options": ["Cloaca", "Egg-Laying", "Live Birth"]
+  },
+  {
+    "name": "Stinging Behavior",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Mouth Type",
+    "options": ["Beak", "Teeth", "Tongue"]
+  },
+  {
+    "name": "Crypsis",
+    "options": ["Blending", "Masquerade", "Disruptive Coloration"]
+  },
+  {
+    "name": "Nesting Material",
+    "options": ["Sticks", "Leaves", "Mud", "Grass", "Feathers"]
+  },
+  {
+    "name": "Intraspecific Competition",
+    "options": [
+      "Territorial Fights",
+      "Hierarchy Establishment",
+      "Courtship Displays"
+    ]
+  },
+  {
+    "name": "Anti-Predator Adaptations",
+    "options": ["Warning Coloration", "Mimicry", "Fleeing Behavior"]
+  },
+  {
+    "name": "Feeding Frenzy",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Parasite Types",
+    "options": ["Ectoparasites", "Endoparasites", "Brood Parasites"]
+  },
+  {
+    "name": "Parental Investment",
+    "options": ["Male Care", "Female Care", "Biparental Care"]
+  },
+  {
+    "name": "Predatory Behavior",
+    "options": ["Pouncing", "Ambushing", "Stalking", "Chasing"]
+  },
+  {
+    "name": "Mate Selection",
+    "options": ["Courtship Rituals", "Dominance Fights", "Sexual Displays"]
+  },
+  {
+    "name": "Nesting Sites",
+    "options": ["Tree Cavity", "Ground Nest", "Rock Ledge"]
+  },
+  {
+    "name": "Agonistic Behavior",
+    "options": ["Threat Displays", "Combat", "Submission Signals"]
+  },
+  {
+    "name": "Food Storage",
+    "options": ["Caching", "Hoarding", "Scavenging"]
+  },
+  {
+    "name": "Reproductive Display",
+    "options": ["Breeding Calls", "Ornamental Plumage", "Dancing"]
+  },
+  {
+    "name": "Exoskeleton",
+    "options": ["Hard", "Soft"]
+  },
+  {
+    "name": "Defensive Structures",
+    "options": ["Spikes", "Camouflage", "Stingers", "Thorns"]
+  },
+  {
+    "name": "Eusociality",
+    "options": [
+      "Worker Castes",
+      "Reproductive Castes",
+      "Cooperative Brood Care"
+    ]
+  },
+  {
+    "name": "Environmental Sensing",
+    "options": ["Echolocation", "Magnetic Field Detection", "Chemoreception"]
+  },
+  {
+    "name": "Migratory Staging",
+    "options": ["Stopover Sites", "Feeding Flocks", "Roosting Sites"]
+  },
+  {
+    "name": "Nesting Behavior",
+    "options": ["Colony Nesting", "Solitary Nesting", "Communal Nesting"]
+  },
+  {
+    "name": "Social Hierarchy",
+    "options": ["Alpha Dominance", "Pecking Order", "Hierarchy Fights"]
+  },
+  {
+    "name": "Mouthpart Type",
+    "options": ["Piercing-Sucking", "Chewing", "Lapping"]
+  },
+  {
+    "name": "Nuptial Gift",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Predator Avoidance",
+    "options": ["Crypsis", "Warning Calls", "Mimicry", "Fleeing"]
+  },
+  {
+    "name": "Toxicity",
+    "options": ["Venomous", "Poisonous", "Irritant"]
+  },
+  {
+    "name": "Parental Offspring Ratio",
+    "options": ["Low Parental Investment", "High Parental Investment"]
+  },
+  {
+    "name": "Feeding Apparatus",
+    "options": ["Proboscis", "Rasping Radula", "Filter-Feeding Bristles"]
+  },
+  {
+    "name": "Sexual Dimorphism",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Cooperative Foraging",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Mimicry Type",
+    "options": ["Batesian Mimicry", "Müllerian Mimicry", "Aggressive Mimicry"]
+  },
+  {
+    "name": "Spawning Behavior",
+    "options": ["Mass Spawning", "Sequential Spawning", "Broadcast Spawning"]
+  },
+  {
+    "name": "Nuptial Dance",
+    "options": ["Yes", "No"]
+  },
+  {
+    "name": "Spore Dispersal",
+    "options": ["Wind Dispersal", "Water Dispersal", "Animal Dispersal"]
+  },
+  {
+    "name": "Parental Care Mechanism",
+    "options": ["Nest Building", "Brooding", "Guarding"]
+  },
+  {
+    "name": "Molt Frequency",
+    "options": ["Ecdysis", "Gradual Molting"]
+  },
+  {
+    "name": "Escape Mechanism",
+    "options": ["Camo", "Speed", "Burrowing", "Biting"]
+  },
+  {
+    "name": "Migratory Timing",
+    "options": ["Seasonal Migration", "Irregular Migration"]
+  },
+  {
+    "name": "Social Insects",
+    "options": ["Ants", "Bees", "Wasps", "Termites"]
+  },
+  {
+    "name": "Collective Decision-Making",
+    "options": ["Swarm Intelligence", "Consensus Decision-Making"]
+  }
+]
