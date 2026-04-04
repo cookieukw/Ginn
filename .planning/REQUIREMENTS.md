@@ -15,9 +15,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### GAME: Loop e Estado
 - [x] **GAME-01**: O jogo deve conduzir um loop inicial de exatamente 10 perguntas antes do 1º palpite.
-- [ ] **GAME-02**: Se o palpite estiver errado, o jogo deve adicionar +5 perguntas para um 2º palpite.
-- [ ] **GAME-03**: Se o 2º palpite estiver errado, o jogo deve adicionar +5 perguntas para um 3º palpite.
-- [ ] **GAME-04**: O jogo deve admitir derrota e solicitar o animal correto após 3 erros.
+- [x] **GAME-02**: Se o palpite estiver errado, o jogo deve adicionar +5 perguntas para um 2º palpite.
+- [x] **GAME-03**: Se o 2º palpite estiver errado, o jogo deve adicionar +5 perguntas para um 3º palpite.
+- [x] **GAME-04**: O jogo deve admitir derrota e solicitar o animal correto após 3 erros.
 
 ### UI: Interface Moderna
 - [x] **UI-01**: A interface deve utilizar estética Glassmorphism (blur, transparência).
@@ -53,9 +53,9 @@ Deferred to future release.
 | CORE-03 | Phase 1 | Complete |
 | CORE-04 | Phase 2 | Complete |
 | GAME-01 | Phase 2 | Complete |
-| GAME-02 | Phase 3 | Pending |
-| GAME-03 | Phase 3 | Pending |
-| GAME-04 | Phase 3 | Pending |
+| GAME-02 | Phase 3 | Complete |
+| GAME-03 | Phase 3 | Complete |
+| GAME-04 | Phase 3 | Complete |
 | UI-01 | Phase 4 | Complete |
 | UI-02 | Phase 4 | Complete |
 | UI-03 | Phase 4 | Complete |
