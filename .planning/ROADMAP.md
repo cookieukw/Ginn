@@ -85,7 +85,7 @@ Plans:
 | 1. Fundação e Dados | 1/1 | Complete    | 2026-04-04 |
 | 2. Motor de Decisão | 1/1 | Complete    | 2026-04-04 |
 | 3. Shell da Interface | 1/1 | Complete    | 2026-04-04 |
-| 4. Personagem e Feedback | 1/1 | Complete   | 2026-04-04 |
+| 4. Personagem e Feedback | 1/1 | Complete    | 2026-04-04 |
 | 5. Integração e Polimento | 0/1 | Not started | - |
 
 ---
