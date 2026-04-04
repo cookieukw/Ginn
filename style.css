@@ -97,6 +97,14 @@ header {
   font-size: 1.1rem;
   line-height: 1.5;
 }
+.pop-anim {
+  animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
 
 #dialogue-bubble::after {
   content: '';
@@ -110,14 +118,45 @@ header {
 }
 
 #jinn-character {
-  font-size: 5rem;
-  margin-top: 1rem;
-  animation: breathing 4s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+#jinn-img {
+  width: 250px;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(187, 134, 252, 0.4));
+  animation: breathing 5s ease-in-out infinite;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#jinn-img.thinking {
+  animation: thinking 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(3, 218, 198, 0.6)) hue-rotate(45deg);
 }
 
 @keyframes breathing {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { 
+    transform: translateY(0) scale(1) rotate(0deg); 
+    filter: drop-shadow(0 0 20px rgba(187, 134, 252, 0.4));
+  }
+  50% { 
+    transform: translateY(-15px) scale(1.02) rotate(1deg); 
+    filter: drop-shadow(0 0 35px rgba(187, 134, 252, 0.6));
+  }
+}
+
+@keyframes thinking {
+  0%, 100% { 
+    transform: scale(1.02) rotate(1deg);
+    filter: drop-shadow(0 0 30px rgba(3, 218, 198, 0.6));
+  }
+  50% { 
+    transform: scale(0.98) rotate(-1deg);
+    filter: drop-shadow(0 0 15px rgba(3, 218, 198, 0.4));
+  }
 }
 
 #ui-section {

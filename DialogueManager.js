@@ -1,33 +1,40 @@
 export default class DialogueManager {
   constructor() {
     this.greetings = [
-      "Finalmente um oponente! Pense em um animal e eu direi qual é.",
-      "Você acha que pode me vencer? Pense em um animal e tente a sorte!",
-      "Sou o Jinn, o mestre dos animais. Pense em um e não mude de ideia miau!"
+      "Finalmente um oponente digno! Pense em um animal e eu direi qual é em um piscar de olhos.",
+      "Você acha que pode vencer a minha inteligência felina? Escolha um animal e tente a sorte!",
+      "Sou o Jinn, o mestre do reino animal. Miaux! Pense em um bicho e não mude de ideia!",
+      "Prepare-se para ser surpreendido. O grande Jinn está pronto para ler sua mente!"
     ];
 
     this.guessLines = [
-      "Hum... sinto o cheiro de um... {animal}! Acertei?",
+      "Hum... sinto o cheiro de um... {animal}! Acertei, não foi?",
       "As pistas levam a um único lugar: você está pensando em um {animal}!",
-      "Minha bola de pelos não falha: é um {animal}!"
+      "Minha bola de pelos não falha: é um {animal}! Acertei?",
+      "Não há como esconder de mim. É um {animal}! Acertei na mosca?",
+      "Diga adeus ao segredo! Você pensou em um {animal}."
     ];
 
     this.wrongGuessLines = [
-      "Quê? Impossível! Vou precisar de mais pistas então...",
-      "Ah, você está tentando me enganar? Vamos ver se escapa dessas perguntas...",
-      "Interessante... então não é esse. Continue respondendo!"
+      "Quê? Impossível! Devo ter tido um soluço mental... vamos continuar.",
+      "Ah, você está tentando me enganar? Isso só torna a vitória mais doce. Próxima pergunta!",
+      "Interessante... então não é esse. Você é mais difícil do que parece, miau!",
+      "Certo, certo... apenas um pequeno desvio. Deixe-me focar mais...",
+      "Ora, ora! Um mestre dos disfarces? Vamos ver se essa pista ajuda..."
     ];
 
     this.winLines = [
-      "Eu sabia! Ninguém vence o grande Jinn!",
-      "Miau! Foi fácil demais. Quer tentar de novo?",
-      "Mais uma vitória para a minha coleção. Sou imbatível!"
+      "Eu sabia! Ninguém vence o grande Jinn no meu próprio jogo!",
+      "Miau! Foi fácil demais. Quer tentar de novo ou vai desistir?",
+      "Mais uma vitória para a minha coleção. Sou imbatível, admita!",
+      "A inteligência felina sempre prevalece. Próximo animal, por favor!"
     ];
 
     this.lossLines = [
-      "O quê?! Como eu pude errar? Você me venceu... desta vez.",
-      "Inacreditável... meus sentidos falharam. Parabéns, humano.",
-      "Você ganhou... mas eu voltarei mais forte!"
+      "O quê?! Como eu pude errar? Você me venceu... desta vez, humano sortudo.",
+      "Inacreditável... meus sentidos falharam. Meus parabéns, você é mestre na arte de pensar em animais raros.",
+      "Você ganhou... mas eu voltarei mais esperto da próxima vez! Miau!",
+      "Rendido! Minha lógica foi quebrada por sua escolha. Bravo!"
     ];
   }
 

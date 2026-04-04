@@ -5,6 +5,7 @@ import GameController from './GameController.js';
 
 // DOM Elements
 const startButton = document.getElementById('start-button');
+const dialogueBubble = document.getElementById('dialogue-bubble');
 const startScreen = document.getElementById('start-screen');
 const questionCard = document.getElementById('question-card');
 const controls = document.getElementById('controls');
@@ -13,11 +14,12 @@ const questionText = document.getElementById('question-text');
 const footer = document.getElementById('game-stats');
 const counter = document.getElementById('question-counter');
 
+const jinnImg = document.getElementById('jinn-img');
+
 let controller;
 
 async function initGame() {
   const manager = new DataManager();
-  // Fetch animals from public/animals.json
   const animals = await manager.loadFromUrl('/animals.json');
   
   const store = new DataStore(animals);
@@ -33,21 +35,38 @@ function startGame() {
   controls.classList.remove('hidden');
   footer.classList.remove('hidden');
 
-  jinnText.innerText = controller.start();
+  const initialText = controller.start();
+  showJinnMessage(initialText);
   updateUI();
 }
 
+function showJinnMessage(text) {
+  // Animação de "Pop-up" no balão
+  dialogueBubble.classList.remove('pop-anim');
+  void dialogueBubble.offsetWidth; // Trigger reflow
+  dialogueBubble.classList.add('pop-anim');
+  jinnText.innerText = text;
+}
+
 function updateUI() {
-  const q = controller.getNextQuestion();
-  
-  if (q.type === 'GUESS') {
-    questionText.innerText = q.text;
-    // Transição para botões de Sim/Não do palpite (v4)
-    // Por enquanto apenas mostramos o texto
-  } else {
-    questionText.innerText = q.text;
-    counter.innerText = `Pergunta: ${controller.questionCount}/10`;
-  }
+  // Simular "Pensando"
+  jinnImg.classList.add('thinking');
+  controls.style.pointerEvents = 'none';
+
+  setTimeout(() => {
+    jinnImg.classList.remove('thinking');
+    controls.style.pointerEvents = 'all';
+
+    const q = controller.getNextQuestion();
+    
+    if (q.type === 'GUESS') {
+      questionText.innerText = q.text;
+      // TODO: Implementar lógica de botões de verificação do palpite na Phase 5
+    } else {
+      questionText.innerText = q.text;
+      counter.innerText = `Pergunta: ${controller.questionCount}/10`;
+    }
+  }, 1000);
 }
 
 // Event Listeners
