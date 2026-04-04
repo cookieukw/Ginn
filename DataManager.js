@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-class DataManager {
+export default class DataManager {
   constructor() {
     this.animals = [];
     this.binaryFeatures = new Set();
@@ -9,6 +9,16 @@ class DataManager {
 
   load(filePath) {
     const rawData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return this.parse(rawData);
+  }
+
+  async loadFromUrl(url) {
+    const response = await fetch(url);
+    const rawData = await response.json();
+    return this.parse(rawData);
+  }
+
+  parse(rawData) {
     this.animals = rawData.map(entry => {
       const animal = {
         name: entry.animal,
@@ -16,9 +26,6 @@ class DataManager {
       };
 
       entry.Características.forEach(([attr, value]) => {
-        // Normalization: 
-        // 1. Separate multiple values if comma-separated
-        // 2. Create binary keys: "Attr_Value"
         const values = value.split(',').map(v => v.trim());
         
         values.forEach(v => {
@@ -41,4 +48,3 @@ class DataManager {
   }
 }
 
-module.exports = DataManager;

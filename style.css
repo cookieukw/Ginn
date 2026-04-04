@@ -1,0 +1,194 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --primary: #bb86fc;
+  --secondary: #03dac6;
+  --text: #ffffff;
+  --bg-gradient: radial-gradient(circle at top right, #1a1a2e, #16213e, #0f3460);
+  --accent-glow: radial-gradient(circle at 50% 50%, rgba(187, 134, 252, 0.15), transparent 70%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+#background-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-glow);
+  pointer-events: none;
+  z-index: -1;
+}
+
+#app {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+}
+
+.jinn-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#dialogue-bubble {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+#dialogue-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--glass-border);
+}
+
+#jinn-character {
+  font-size: 5rem;
+  margin-top: 1rem;
+  animation: breathing 4s ease-in-out infinite;
+}
+
+@keyframes breathing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+#ui-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#question-card {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.glass-button:active {
+  transform: scale(0.98);
+}
+
+.btn-yes:hover { box-shadow: 0 0 15px rgba(3, 218, 198, 0.3); }
+.btn-no:hover { box-shadow: 0 0 15px rgba(255, 45, 85, 0.3); }
+
+.primary {
+  background: rgba(187, 134, 252, 0.2);
+  border-color: var(--primary);
+  grid-column: span 2;
+  font-size: 1.2rem;
+}
+
+.btn-unknown {
+  grid-column: span 2;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#game-stats {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  #app {
+    padding: 1rem;
+  }
+}

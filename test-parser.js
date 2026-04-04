@@ -1,8 +1,12 @@
-const assert = require('assert');
-const fs = require('fs');
-const path = require('path');
-const DataManager = require('./DataManager');
-const DataStore = require('./DataStore');
+import assert from 'assert';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import DataManager from './DataManager.js';
+import DataStore from './DataStore.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Test animals.json loading
 try {
@@ -38,7 +42,7 @@ try {
   store.filter('Dieta_Omnívoro', 1);
   console.log(`Count after Omnívoro filter: ${store.getCandidateCount()}`);
   
-  console.log('✅ DataManager and DataStore verified.');
+  console.log('✅ DataManager and DataStore verified (ESM).');
   
 } catch (err) {
   console.error('❌ Test failed:', err.message);

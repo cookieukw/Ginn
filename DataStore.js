@@ -1,4 +1,4 @@
-class DataStore {
+export default class DataStore {
   constructor(animals) {
     this.allAnimals = animals;
     this.activeCandidates = [...animals];
@@ -42,4 +42,3 @@ class DataStore {
   }
 }
 
-module.exports = DataStore;

@@ -1,4 +1,4 @@
-class DecisionEngine {
+export default class DecisionEngine {
   constructor(store) {
     this.store = store;
     this.ignoredFeatures = new Set();
@@ -87,4 +87,3 @@ class DecisionEngine {
   }
 }
 
-module.exports = DecisionEngine;

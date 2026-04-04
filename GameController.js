@@ -1,6 +1,6 @@
-const DialogueManager = require('./DialogueManager');
+import DialogueManager from './DialogueManager.js';
 
-class GameController {
+export default class GameController {
   constructor(store, engine) {
     this.store = store;
     this.engine = engine;
@@ -78,4 +78,3 @@ class GameController {
   }
 }
 
-module.exports = GameController;

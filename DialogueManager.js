@@ -1,4 +1,4 @@
-class DialogueManager {
+export default class DialogueManager {
   constructor() {
     this.greetings = [
       "Finalmente um oponente! Pense em um animal e eu direi qual é.",
@@ -79,4 +79,3 @@ class DialogueManager {
   }
 }
 
-module.exports = DialogueManager;

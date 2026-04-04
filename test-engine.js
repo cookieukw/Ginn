@@ -1,9 +1,13 @@
-const assert = require('assert');
-const DataManager = require('./DataManager');
-const DataStore = require('./DataStore');
-const DecisionEngine = require('./DecisionEngine');
-const GameController = require('./GameController');
-const path = require('path');
+import assert from 'assert';
+import DataManager from './DataManager.js';
+import DataStore from './DataStore.js';
+import DecisionEngine from './DecisionEngine.js';
+import GameController from './GameController.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 try {
   const dataPath = path.join(__dirname, 'oldData', 'animals.json');
@@ -21,26 +25,21 @@ try {
   console.log(`P1: ${q.text}`);
   
   // Simulação de respostas para chegar no Cachorro
-  // Cachorro: Tamanho_Médio a Grande=1, Dieta_Omnívoro=1, Locomoção_Quadrúpede=1
-  
-  // Vamos forçar algumas respostas
   controller.answerQuestion('Tamanho_Médio a Grande', 1);
   controller.answerQuestion('Dieta_Omnívoro', 1);
   controller.answerQuestion('Locomoção_Quadrúpede', 1);
   
   console.log(`Candidatos restantes: ${store.getCandidateCount()}`);
   
-  // Testar o palpite (forçar 10 perguntas ou reduzir a 1)
-  // Se reduzir a 1, o controller deve estar pronto para palpitar
   if (store.getCandidateCount() === 1) {
     const guess = controller.getGuess();
     console.log(`Palpite do Jinn: ${guess.name}`);
     assert(guess.name === 'Cachorro', 'Deveria ser Cachorro');
   }
 
-  console.log('✅ test-engine.js (Básico) aprovado.');
+  console.log('✅ test-engine.js (ESM) aprovado.');
 
 } catch (err) {
   console.error('❌ Erro no teste:', err.message);
-  // Não saímos com erro ainda porque as classes não existem
+  process.exit(1);
 }

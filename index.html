@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Jinn - O Mestre dos Animais</title>
+    <meta name="description" content="Um jogo de adivinhação de animais inteligente e desafiador.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="background-glow"></div>
+    
+    <main id="app">
+        <header>
+            <h1 class="logo">Magic Jinn</h1>
+        </header>
+
+        <section id="game-container">
+            <!-- Área do Jinn e Balão -->
+            <div class="jinn-section">
+                <div id="dialogue-bubble" class="glass-card">
+                    <p id="jinn-text">Miau! Pense em um animal e eu tentarei adivinhá-lo...</p>
+                </div>
+                <div id="jinn-character">
+                    <!-- O Gato Jinn será implementado na Phase 4 -->
+                    <div class="jinn-placeholder">🐱</div>
+                </div>
+            </div>
+
+            <!-- Área de Interface de Usuário -->
+            <div id="ui-section">
+                <div id="question-card" class="glass-card hidden">
+                    <h2 id="question-text">O animal é de tamanho grande?</h2>
+                </div>
+
+                <div id="controls" class="hidden">
+                    <button class="glass-button btn-yes" data-response="1">Sim</button>
+                    <button class="glass-button btn-no" data-response="0">Não</button>
+                    <button class="glass-button btn-unknown" data-response="0.5">Não Sei</button>
+                </div>
+
+                <div id="start-screen">
+                    <button id="start-button" class="glass-button primary">Começar Desafio</button>
+                </div>
+            </div>
+        </section>
+
+        <footer id="game-stats" class="hidden">
+            <span id="question-counter">Pergunta: 0/10</span>
+        </footer>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
