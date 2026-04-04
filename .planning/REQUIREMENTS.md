@@ -20,8 +20,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **GAME-04**: O jogo deve admitir derrota e solicitar o animal correto após 3 erros.
 
 ### UI: Interface Moderna
-- [ ] **UI-01**: A interface deve utilizar estética Glassmorphism (blur, transparência).
-- [ ] **UI-02**: O design deve ser responsivo e otimizado para web (mobile/desktop).
+- [x] **UI-01**: A interface deve utilizar estética Glassmorphism (blur, transparência).
+- [x] **UI-02**: O design deve ser responsivo e otimizado para web (mobile/desktop).
 - [ ] **UI-03**: Deve haver animações suaves de transição entre perguntas e palpites.
 
 ### CHAR: Personagem e Diálogo
@@ -56,8 +56,8 @@ Deferred to future release.
 | GAME-02 | Phase 3 | Pending |
 | GAME-03 | Phase 3 | Pending |
 | GAME-04 | Phase 3 | Pending |
-| UI-01 | Phase 4 | Pending |
-| UI-02 | Phase 4 | Pending |
+| UI-01 | Phase 4 | Complete |
+| UI-02 | Phase 4 | Complete |
 | UI-03 | Phase 4 | Pending |
 | CHAR-01 | Phase 5 | Pending |
 | CHAR-02 | Phase 5 | Pending |

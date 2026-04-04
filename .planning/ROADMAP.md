@@ -7,7 +7,7 @@ A jornada do Magic Jinn começa com a estruturação do conhecimento dos animais
 
 - [x] **Phase 1: Fundação e Dados** - Setup do parser de animais e estrutura de dados. (completed 2026-04-04)
 - [x] **Phase 2: Motor de Decisão** - Implementação do algoritmo de entropia e lógica de filtragem. (completed 2026-04-04)
-- [ ] **Phase 3: Shell da Interface** - Criação da estrutura HTML/CSS com Glassmorphism.
+- [x] **Phase 3: Shell da Interface** - Criação da estrutura HTML/CSS com Glassmorphism. (completed 2026-04-04)
 - [ ] **Phase 4: Personagem e Feedback** - Animações do Jinn e sistema de diálogos em Português.
 - [ ] **Phase 5: Integração e Polimento** - Loop 10+5+5 completo e refinamentos visuais.
 
@@ -50,7 +50,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 03-01: Criar index.html e base CSS (Glassmorphism design system).
+- [x] 03-01: Criar index.html e base CSS (Glassmorphism design system).
 
 ### Phase 4: Personagem e Feedback
 **Goal**: Dar alma ao Jinn.
@@ -84,7 +84,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Fundação e Dados | 1/1 | Complete    | 2026-04-04 |
 | 2. Motor de Decisão | 1/1 | Complete    | 2026-04-04 |
-| 3. Shell da Interface | 0/1 | Not started | - |
+| 3. Shell da Interface | 1/1 | Complete   | 2026-04-04 |
 | 4. Personagem e Feedback | 0/2 | Not started | - |
 | 5. Integração e Polimento | 0/1 | Not started | - |
 
