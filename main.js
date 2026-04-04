@@ -67,13 +67,15 @@ function updateUI() {
     return;
   }
 
-  // Simular "Pensando"
+  // Simular "Pensando" com transição de texto
   jinnImg.classList.add('thinking');
+  questionText.classList.add('fade-out');
   controls.style.pointerEvents = 'none';
   guessControls.style.pointerEvents = 'none';
 
   setTimeout(() => {
     jinnImg.classList.remove('thinking');
+    questionText.classList.remove('fade-out');
     controls.style.pointerEvents = 'all';
     guessControls.style.pointerEvents = 'all';
 
@@ -89,7 +91,7 @@ function updateUI() {
       questionText.innerText = q.text;
       counter.innerText = `Pergunta: ${controller.questionCount}/${controller.getNextLimit()}`;
     }
-  }, 800);
+  }, 500);
 }
 
 function handleEndGame() {

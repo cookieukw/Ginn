@@ -41,6 +41,10 @@ export default class DataStore {
     return counts;
   }
 
+  removeCandidate(name) {
+    this.activeCandidates = this.activeCandidates.filter(c => c.name !== name);
+  }
+
   reset() {
     this.activeCandidates = [...this.allAnimals];
   }

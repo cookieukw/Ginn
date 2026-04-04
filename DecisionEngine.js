@@ -23,6 +23,15 @@ export default class DecisionEngine {
       "Comportamento Territorial": 0.8,
       Migração: 0.8,
     };
+    this.lastCategories = []; // Fila circular das últimas 2 categorias
+    this.maxHistory = 2;
+  }
+
+  recordCategory(category) {
+    this.lastCategories.push(category);
+    if (this.lastCategories.length > this.maxHistory) {
+      this.lastCategories.shift();
+    }
   }
 
   calculateEntropy(candidates) {
@@ -35,7 +44,6 @@ export default class DecisionEngine {
     const totalCount = candidates.length;
     if (totalCount <= 1) return null;
 
-    const parentEntropy = this.calculateEntropy(candidates);
     const featureCounts = this.store.getFeatureCounts();
 
     let bestFeature = null;
@@ -47,28 +55,31 @@ export default class DecisionEngine {
 
       const yesCount = featureCounts[featureKey];
       const noCount = totalCount - yesCount;
-
       if (yesCount === 0 || noCount === 0) return;
 
       const pYes = yesCount / totalCount;
-      const pNo = noCount / totalCount;
-
-      const childrenEntropy =
-        pYes * Math.log2(yesCount) + pNo * Math.log2(noCount);
-      const gain = parentEntropy - (parentEntropy - childrenEntropy);
-
+      
       const attrBase = featureKey.split("_")[0];
       const weight = this.weights[attrBase] || 1.0;
-      const weightedGain = childrenEntropy * weight;
+      
+      // Penalização de Categoria Repetida
+      const isRepeat = this.lastCategories.includes(attrBase);
+      const categoryPenalty = isRepeat ? 0.3 : 1.0;
 
-
-      const score = (1 - Math.abs(pYes - 0.5)) * weight;
+      // Cálculo de score com Jitter (Aleatoriedade)
+      const jitter = Math.random() * 0.05;
+      const score = ((1 - Math.abs(pYes - 0.5)) * weight * categoryPenalty) + jitter;
 
       if (score > maxGain) {
         maxGain = score;
         bestFeature = featureKey;
       }
     });
+
+    if (bestFeature) {
+      const bestAttr = bestFeature.split("_")[0];
+      this.recordCategory(bestAttr);
+    }
 
     return bestFeature;
   }

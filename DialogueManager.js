@@ -55,18 +55,21 @@ export default class DialogueManager {
       'Tamanho': `O animal é de tamanho ${value.toLowerCase()}?`,
       'Dieta': `O animal é ${value.toLowerCase()}?`,
       'Habitat': `O animal vive em ${value.toLowerCase()}?`,
-      'Reprodução': `O animal tem reprodução ${value.toLowerCase()}?`,
-      'Locomoção': `O animal é ${value.toLowerCase()}?`,
-      'Cor': `O animal tem a cor ${value.toLowerCase()}?`,
+      'Habitat': 'O habitat deste animal é {v}?',
+      'Reprodução': 'O animal é {v}?',
+      'Locomoção': 'O animal se locomove de forma {v}?',
+      'Tamanho': 'O animal é caraterizado como {v}?',
+      'Dieta': 'Este animal é {v}?',
+      'Cor': 'A cor predominante do animal é {v}?',
       'Clima Preferido': `O animal prefere o clima ${value.toLowerCase()}?`,
-      'Ciclo de Atividade': `O animal tem ciclo de atividade ${value.toLowerCase()}?`,
+      'Ciclo de Atividade': 'Este animal tem hábito {v}?',
       'Comunicação': `O animal se comunica através de ${value.toLowerCase()}?`,
       'Comportamento Territorial': `O animal é territorialista?`,
       'Migração': `O animal é ${value.toLowerCase()}?`,
       'Bioma': `O animal vive no bioma ${value.toLowerCase()}?`
     };
 
-    return templates[attr] || `O animal tem ${attr}: ${value}?`;
+    return templates[attr] ? templates[attr].replace('{v}', value.toLowerCase()) : `O animal possui a característica ${attr}: ${value}?`;
   }
 
   getGuessLine(animalName) {
@@ -74,7 +77,14 @@ export default class DialogueManager {
   }
 
   getWrongGuessLine() {
-    return this.getRandom(this.wrongGuessLines);
+    const lines = [
+      'Não? Impossível... meus cálculos miau-gráficos falharam? Continuarei!',
+      'Errei? Você está tentando me enganar? Vou descobrir a verdade!',
+      'Miau! Essa foi difícil... mas ainda tenho cartas na manga.',
+      'Hum... entendo. Deixe-me pensar mais um pouco então.',
+      'Interessante... você quase me pegou, mas eu vou vencer!'
+    ];
+    return lines[Math.floor(Math.random() * lines.length)];
   }
 
   getWinLine() {

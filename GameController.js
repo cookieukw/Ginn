@@ -10,7 +10,7 @@ export default class GameController {
     this.questionCount = 0;
     this.guessHistory = new Set();
     this.maxGuesses = 3;
-    this.guessThresholds = [10, 15, 20];
+    this.guessThresholds = [15, 20, 25];
     this.currentGuessIndex = 0;
     
     this.currentQuestion = null;
@@ -75,8 +75,10 @@ export default class GameController {
     this.engine.reset();
     this.state = 'INIT';
     this.questionCount = 0;
+    this.guessThresholds = [15, 20, 25];
     this.currentGuessIndex = 0;
-    this.isWin = false;
+    
+    this.currentQuestion = null;
   }
 
   handleGuessResponse(isCorrect) {
@@ -85,6 +87,11 @@ export default class GameController {
       this.isWin = true;
       return this.dialogue.getWinLine();
     } else {
+      const wrongGuess = this.getGuess();
+      if (wrongGuess) {
+        this.store.removeCandidate(wrongGuess.name);
+      }
+      
       this.currentGuessIndex++;
       if (this.currentGuessIndex >= this.maxGuesses) {
         this.state = 'LOSS';
