@@ -14,6 +14,14 @@ const questionText = document.getElementById('question-text');
 const footer = document.getElementById('game-stats');
 const counter = document.getElementById('question-counter');
 
+const guessControls = document.getElementById('guess-controls');
+const endScreen = document.getElementById('end-screen');
+const endTitle = document.getElementById('end-title');
+const endMessage = document.getElementById('end-message');
+const lossContainer = document.getElementById('loss-input-container');
+const restartButton = document.getElementById('restart-button');
+const btnGuessYes = document.getElementById('btn-guess-yes');
+const btnGuessNo = document.getElementById('btn-guess-no');
 const jinnImg = document.getElementById('jinn-img');
 
 let controller;
@@ -26,14 +34,18 @@ async function initGame() {
   const engine = new DecisionEngine(store);
   controller = new GameController(store, engine);
 
-  console.log('Jinn Initialized. Candidates:', store.getCandidateCount());
+  console.log('Jinn Initialized.');
 }
 
 function startGame() {
   startScreen.classList.add('hidden');
+  endScreen.classList.add('hidden');
   questionCard.classList.remove('hidden');
   controls.classList.remove('hidden');
   footer.classList.remove('hidden');
+  
+  // Reset visual aura
+  jinnImg.classList.remove('win-aura', 'loss-aura');
 
   const initialText = controller.start();
   showJinnMessage(initialText);
@@ -41,37 +53,85 @@ function startGame() {
 }
 
 function showJinnMessage(text) {
-  // Animação de "Pop-up" no balão
   dialogueBubble.classList.remove('pop-anim');
-  void dialogueBubble.offsetWidth; // Trigger reflow
+  void dialogueBubble.offsetWidth; 
   dialogueBubble.classList.add('pop-anim');
   jinnText.innerText = text;
 }
 
 function updateUI() {
+  const state = controller.getState();
+  
+  if (state === 'FINISHED') {
+    handleEndGame();
+    return;
+  }
+
   // Simular "Pensando"
   jinnImg.classList.add('thinking');
   controls.style.pointerEvents = 'none';
+  guessControls.style.pointerEvents = 'none';
 
   setTimeout(() => {
     jinnImg.classList.remove('thinking');
     controls.style.pointerEvents = 'all';
+    guessControls.style.pointerEvents = 'all';
 
     const q = controller.getNextQuestion();
     
     if (q.type === 'GUESS') {
+      controls.classList.add('hidden');
+      guessControls.classList.remove('hidden');
       questionText.innerText = q.text;
-      // TODO: Implementar lógica de botões de verificação do palpite na Phase 5
     } else {
+      controls.classList.remove('hidden');
+      guessControls.classList.add('hidden');
       questionText.innerText = q.text;
-      counter.innerText = `Pergunta: ${controller.questionCount}/10`;
+      counter.innerText = `Pergunta: ${controller.questionCount}/${controller.getNextLimit()}`;
     }
-  }, 1000);
+  }, 800);
+}
+
+function handleEndGame() {
+  questionCard.classList.add('hidden');
+  controls.classList.add('hidden');
+  guessControls.classList.add('hidden');
+  footer.classList.add('hidden');
+  endScreen.classList.remove('hidden');
+
+  if (controller.isWin) {
+    endTitle.innerText = "Vitória do Jinn!";
+    endMessage.innerText = "Eu sabia! Minha inteligência é insuperável, miau!";
+    jinnImg.classList.add('win-aura');
+    lossContainer.classList.add('hidden');
+  } else {
+    endTitle.innerText = "Você Venceu...";
+    endMessage.innerText = "Inacreditável... você é um mestre dos animais! Mas qual animal era?";
+    jinnImg.classList.add('loss-aura');
+    lossContainer.classList.remove('hidden');
+  }
 }
 
 // Event Listeners
 startButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', () => {
+    controller.reset();
+    startGame();
+});
 
+btnGuessYes.addEventListener('click', () => {
+    const text = controller.handleGuessResponse(true);
+    showJinnMessage(text);
+    updateUI();
+});
+
+btnGuessNo.addEventListener('click', () => {
+    const text = controller.handleGuessResponse(false);
+    showJinnMessage(text);
+    updateUI();
+});
+
+// Event Listeners
 document.querySelectorAll('.glass-button[data-response]').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const response = parseFloat(e.target.dataset.response);

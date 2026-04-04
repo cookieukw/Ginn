@@ -35,12 +35,30 @@
                     <h2 id="question-text">O animal é de tamanho grande?</h2>
                 </div>
 
+                <!-- Controles de Pergunta -->
                 <div id="controls" class="hidden">
                     <button class="glass-button btn-yes" data-response="1">Sim</button>
                     <button class="glass-button btn-no" data-response="0">Não</button>
                     <button class="glass-button btn-unknown" data-response="0.5">Não Sei</button>
                 </div>
 
+                <!-- Controles de Palpite -->
+                <div id="guess-controls" class="hidden">
+                    <button id="btn-guess-yes" class="glass-button primary">Sim! Acertou!</button>
+                    <button id="btn-guess-no" class="glass-button btn-no">Errado...</button>
+                </div>
+
+                <!-- Tela Final -->
+                <div id="end-screen" class="hidden glass-card">
+                    <h2 id="end-title">Fim de Jogo</h2>
+                    <p id="end-message">Obrigado por jogar!</p>
+                    <div id="loss-input-container" class="hidden">
+                        <input type="text" id="correct-animal-input" placeholder="Qual animal era?">
+                    </div>
+                    <button id="restart-button" class="glass-button primary">Jogar Novamente</button>
+                </div>
+
+                <!-- Tela de Início -->
                 <div id="start-screen">
                     <button id="start-button" class="glass-button primary">Começar Desafio</button>
                 </div>

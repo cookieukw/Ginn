@@ -225,9 +225,54 @@ header {
   opacity: 0.6;
 }
 
-/* Responsive adjustments */
-@media (max-width: 400px) {
-  #app {
-    padding: 1rem;
-  }
+#guess-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#end-screen {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 40px rgba(187, 134, 252, 0.2);
+}
+
+#end-title {
+  font-family: 'Outfit', sans-serif;
+  color: var(--secondary);
+  font-size: 2rem;
+}
+
+#loss-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#correct-animal-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+#correct-animal-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.win-aura {
+  filter: drop-shadow(0 0 40px rgba(3, 218, 198, 0.8)) !important;
+}
+
+.loss-aura {
+  filter: grayscale(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2)) !important;
 }

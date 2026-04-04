@@ -40,5 +40,9 @@ export default class DataStore {
     });
     return counts;
   }
+
+  reset() {
+    this.activeCandidates = [...this.allAnimals];
+  }
 }
 

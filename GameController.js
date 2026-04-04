@@ -61,14 +61,34 @@ export default class GameController {
     return this.store.activeCandidates[0];
   }
 
+  getState() {
+    if (this.state === 'WIN' || this.state === 'LOSS') return 'FINISHED';
+    return this.state;
+  }
+
+  getNextLimit() {
+    return this.guessThresholds[this.currentGuessIndex] || 20;
+  }
+
+  reset() {
+    this.store.reset();
+    this.engine.reset();
+    this.state = 'INIT';
+    this.questionCount = 0;
+    this.currentGuessIndex = 0;
+    this.isWin = false;
+  }
+
   handleGuessResponse(isCorrect) {
     if (isCorrect) {
       this.state = 'WIN';
+      this.isWin = true;
       return this.dialogue.getWinLine();
     } else {
       this.currentGuessIndex++;
       if (this.currentGuessIndex >= this.maxGuesses) {
         this.state = 'LOSS';
+        this.isWin = false;
         return this.dialogue.getLossLine();
       } else {
         this.state = 'QUESTIONING';
