@@ -22,12 +22,12 @@ Requirements for initial release. Each maps to roadmap phases.
 ### UI: Interface Moderna
 - [x] **UI-01**: A interface deve utilizar estética Glassmorphism (blur, transparência).
 - [x] **UI-02**: O design deve ser responsivo e otimizado para web (mobile/desktop).
-- [ ] **UI-03**: Deve haver animações suaves de transição entre perguntas e palpites.
+- [x] **UI-03**: Deve haver animações suaves de transição entre perguntas e palpites.
 
 ### CHAR: Personagem e Diálogo
-- [ ] **CHAR-01**: O personagem "Jinn" deve ser exibido visualmente com animações simples (idle/thinking).
-- [ ] **CHAR-02**: Todo o texto da interface e diálogos do Jinn devem estar em Português.
-- [ ] **CHAR-03**: O Jinn deve reagir com frases dinâmicas para manter o usuário engajado.
+- [x] **CHAR-01**: O personagem "Jinn" deve ser exibido visualmente com animações simples (idle/thinking).
+- [x] **CHAR-02**: Todo o texto da interface e diálogos do Jinn devem estar em Português.
+- [x] **CHAR-03**: O Jinn deve reagir com frases dinâmicas para manter o usuário engajado.
 
 ## v2 Requirements
 Deferred to future release.
@@ -58,10 +58,10 @@ Deferred to future release.
 | GAME-04 | Phase 3 | Pending |
 | UI-01 | Phase 4 | Complete |
 | UI-02 | Phase 4 | Complete |
-| UI-03 | Phase 4 | Pending |
-| CHAR-01 | Phase 5 | Pending |
-| CHAR-02 | Phase 5 | Pending |
-| CHAR-03 | Phase 5 | Pending |
+| UI-03 | Phase 4 | Complete |
+| CHAR-01 | Phase 5 | Complete |
+| CHAR-02 | Phase 5 | Complete |
+| CHAR-03 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 14 total
