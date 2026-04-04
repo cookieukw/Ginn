@@ -86,7 +86,7 @@ Plans:
 | 2. Motor de Decisão | 1/1 | Complete    | 2026-04-04 |
 | 3. Shell da Interface | 1/1 | Complete    | 2026-04-04 |
 | 4. Personagem e Feedback | 1/1 | Complete    | 2026-04-04 |
-| 5. Integração e Polimento | 1/1 | Complete   | 2026-04-04 |
+| 5. Integração e Polimento | 1/1 | Complete    | 2026-04-04 |
 
 ---
 *Roadmap defined: 2026-04-03*
