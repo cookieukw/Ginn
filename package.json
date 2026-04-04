@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +18,8 @@
     "decision-tree": "^0.3.7",
     "nodemon": "^3.0.1"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "vite": "^8.0.3"
+  }
 }
