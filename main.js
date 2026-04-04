@@ -28,7 +28,7 @@ let controller;
 
 async function initGame() {
   const manager = new DataManager();
-  const animals = await manager.loadFromUrl('/animals.json');
+  const animals = await manager.loadFromUrl('animals.json');
   
   const store = new DataStore(animals);
   const engine = new DecisionEngine(store);

@@ -1,17 +1,27 @@
-import fs from 'fs';
-import path from 'path';
-
 export default class DataManager {
   constructor() {
     this.animals = [];
     this.binaryFeatures = new Set();
   }
 
-  load(filePath) {
-    const rawData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    return this.parse(rawData);
+  // Node only: carregar via filesystem (será usado apenas nos testes locais)
+  async load(filePath) {
+    if (typeof window === 'undefined') {
+      // Import dinâmico com @vite-ignore para evitar que o bundler do browser tente incluir o 'fs'
+      try {
+        const fs = await import(/* @vite-ignore */ 'fs');
+        const rawData = JSON.parse(fs.default.readFileSync(filePath, 'utf8'));
+        return this.parse(rawData);
+      } catch (e) {
+        console.error('Erro ao carregar via FS:', e);
+        throw e;
+      }
+    } else {
+      throw new Error('FileSystem não disponível no browser.');
+    }
   }
 
+  // Browser/Node 18+: carregar via URL
   async loadFromUrl(url) {
     const response = await fetch(url);
     const rawData = await response.json();
@@ -47,4 +57,3 @@ export default class DataManager {
     return Array.from(this.binaryFeatures);
   }
 }
-
