@@ -5,7 +5,7 @@ A jornada do Magic Jinn começa com a estruturação do conhecimento dos animais
 
 ## Phases
 
-- [ ] **Phase 1: Fundação e Dados** - Setup do parser de animais e estrutura de dados.
+- [x] **Phase 1: Fundação e Dados** - Setup do parser de animais e estrutura de dados. (completed 2026-04-04)
 - [ ] **Phase 2: Motor de Decisão** - Implementação do algoritmo de entropia e lógica de filtragem.
 - [ ] **Phase 3: Shell da Interface** - Criação da estrutura HTML/CSS com Glassmorphism.
 - [ ] **Phase 4: Personagem e Feedback** - Animações do Jinn e sistema de diálogos em Português.
@@ -24,7 +24,7 @@ A jornada do Magic Jinn começa com a estruturação do conhecimento dos animais
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: Implementar AnimalParser e DataStore.
+- [x] 01-01: Implementar AnimalParser e DataStore.
 
 ### Phase 2: Motor de Decisão
 **Goal**: O "cérebro" do Jinn escolhendo perguntas inteligentes.
@@ -82,7 +82,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação e Dados | 0/1 | Not started | - |
+| 1. Fundação e Dados | 1/1 | Complete   | 2026-04-04 |
 | 2. Motor de Decisão | 0/2 | Not started | - |
 | 3. Shell da Interface | 0/1 | Not started | - |
 | 4. Personagem e Feedback | 0/2 | Not started | - |

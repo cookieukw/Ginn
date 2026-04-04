@@ -8,7 +8,7 @@
 Requirements for initial release. Each maps to roadmap phases.
 
 ### CORE: Motor de Adivinhação
-- [ ] **CORE-01**: O sistema deve carregar e indexar `animals.json` com sucesso.
+- [x] **CORE-01**: O sistema deve carregar e indexar `animals.json` com sucesso.
 - [ ] **CORE-02**: O algoritmo deve calcular o ganho de informação (entropia) para cada característica.
 - [ ] **CORE-03**: O motor deve filtrar animais com base em respostas binárias ("Sim"/"Não").
 - [ ] **CORE-04**: O motor deve ajustar pesos probabilísticos para respostas incertas ("Talvez"/"Não sei").
@@ -48,7 +48,7 @@ Deferred to future release.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | Phase 1 | Pending |
+| CORE-01 | Phase 1 | Complete |
 | CORE-02 | Phase 1 | Pending |
 | CORE-03 | Phase 1 | Pending |
 | CORE-04 | Phase 2 | Pending |
