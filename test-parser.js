@@ -23,13 +23,13 @@ async function runTest() {
     
     const dog = animals.find(a => a.name === 'Cachorro');
     console.log(`Dog Features: ${Object.keys(dog.features).join(', ')}`);
-    assert(dog.features['Dieta_Omnívoro'] === 1, 'Dog should be Omnívoro');
+    assert(dog.features['diet_Omnívoro'] === 1, 'Dog should be Omnívoro');
     
     const store = new DataStore(animals);
     console.log(`Store Initial Count: ${store.getCandidateCount()}`);
     assert(store.getCandidateCount() === animals.length, 'Initial count mismatch');
     
-    store.filter('Reprodução_Vivíparo', 1);
+    store.filter('reproduction_Vivíparo', 1);
     console.log(`Count after Vivíparo filter: ${store.getCandidateCount()}`);
     
     console.log('✅ DataManager and DataStore verified (ESM Async).');

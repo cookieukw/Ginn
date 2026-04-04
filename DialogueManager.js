@@ -49,24 +49,28 @@ export default class DialogueManager {
   getQuestionText(featureKey) {
     // featureKey format: "Attr_Value" -> "O animal tem [Attr] [Value]?"
     // Melhores traduções baseadas no atributo:
-    const [attr, value] = featureKey.split('_');
+    // featureKey format: "Attr_Name_Value" -> Attribute can have underscores
+    const parts = featureKey.split('_');
+    const value = parts.pop();
+    const attr = parts.join('_');
     
     const templates = {
-      'Tamanho': `O animal é de tamanho ${value.toLowerCase()}?`,
-      'Dieta': `O animal é ${value.toLowerCase()}?`,
-      'Habitat': `O animal vive em ${value.toLowerCase()}?`,
-      'Habitat': 'O habitat deste animal é {v}?',
-      'Reprodução': 'O animal é {v}?',
-      'Locomoção': 'O animal se locomove de forma {v}?',
-      'Tamanho': 'O animal é caraterizado como {v}?',
-      'Dieta': 'Este animal é {v}?',
-      'Cor': 'A cor predominante do animal é {v}?',
-      'Clima Preferido': `O animal prefere o clima ${value.toLowerCase()}?`,
-      'Ciclo de Atividade': 'Este animal tem hábito {v}?',
-      'Comunicação': `O animal se comunica através de ${value.toLowerCase()}?`,
-      'Comportamento Territorial': `O animal é territorialista?`,
-      'Migração': `O animal é ${value.toLowerCase()}?`,
-      'Bioma': `O animal vive no bioma ${value.toLowerCase()}?`
+      size: 'O animal é caraterizado como {v}?',
+      diet: 'Este animal é {v}?',
+      habitat: 'O habitat deste animal é {v}?',
+      reproduction: 'O animal é {v}?',
+      locomotion: 'O animal se locomove de forma {v}?',
+      color: 'A cor predominante do animal é {v}?',
+      preferred_climate: 'O animal prefere o clima {v}?',
+      activity_cycle: 'Este animal tem hábito {v}?',
+      communication: 'O animal se comunica através de {v}?',
+      territorial_behavior: 'O animal é territorialista?',
+      migration: 'O animal é {v}?',
+      biome: 'O animal vive no bioma {v}?',
+      longevity: 'Este animal tem longevidade {v}?',
+      lifespan: 'A expectativa de vida do animal é {v}?',
+      gestation_period: 'O período de gestação do animal é {v}?',
+      dental_formula: 'A fórmula dental do animal é {v}?',
     };
 
     return templates[attr] ? templates[attr].replace('{v}', value.toLowerCase()) : `O animal possui a característica ${attr}: ${value}?`;

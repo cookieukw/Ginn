@@ -23,13 +23,13 @@ async function runTestSuite() {
     
     // Pergunta 1
     controller.start();
-    let q = controller.getNextQuestion();
-    console.log(`P1: ${q.text}`);
-    
-    controller.answerQuestion('Tamanho_Médio a Grande', 1);
-    controller.answerQuestion('Dieta_Omnívoro', 1);
-    controller.answerQuestion('Locomoção_Quadrúpede', 1);
-    
+      const q1 = controller.getNextQuestion();
+      console.log(`P1: ${q1.text}`);
+      controller.answerQuestion('reproduction_Ovíparo', 0); // Cachorro não é ovíparo
+      
+      const q2 = controller.getNextQuestion();
+      console.log(`P2: ${q2.text}`);
+      controller.answerQuestion('size_Grande', 1); // Cachorro é grande
     console.log(`Candidatos restantes: ${store.getCandidateCount()}`);
     
     const guessObj = controller.getNextQuestion();

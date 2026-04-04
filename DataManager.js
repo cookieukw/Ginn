@@ -31,11 +31,11 @@ export default class DataManager {
   parse(rawData) {
     this.animals = rawData.map(entry => {
       const animal = {
-        name: entry.animal,
+        name: entry.name,
         features: {}
       };
 
-      entry.Características.forEach(([attr, value]) => {
+      entry.features.forEach(([attr, value]) => {
         const values = value.split(',').map(v => v.trim());
         
         values.forEach(v => {
