@@ -9,12 +9,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### CORE: Motor de Adivinhação
 - [x] **CORE-01**: O sistema deve carregar e indexar `animals.json` com sucesso.
-- [ ] **CORE-02**: O algoritmo deve calcular o ganho de informação (entropia) para cada característica.
-- [ ] **CORE-03**: O motor deve filtrar animais com base em respostas binárias ("Sim"/"Não").
-- [ ] **CORE-04**: O motor deve ajustar pesos probabilísticos para respostas incertas ("Talvez"/"Não sei").
+- [x] **CORE-02**: O algoritmo deve calcular o ganho de informação (entropia) para cada característica.
+- [x] **CORE-03**: O motor deve filtrar animais com base em respostas binárias ("Sim"/"Não").
+- [x] **CORE-04**: O motor deve ajustar pesos probabilísticos para respostas incertas ("Talvez"/"Não sei").
 
 ### GAME: Loop e Estado
-- [ ] **GAME-01**: O jogo deve conduzir um loop inicial de exatamente 10 perguntas antes do 1º palpite.
+- [x] **GAME-01**: O jogo deve conduzir um loop inicial de exatamente 10 perguntas antes do 1º palpite.
 - [ ] **GAME-02**: Se o palpite estiver errado, o jogo deve adicionar +5 perguntas para um 2º palpite.
 - [ ] **GAME-03**: Se o 2º palpite estiver errado, o jogo deve adicionar +5 perguntas para um 3º palpite.
 - [ ] **GAME-04**: O jogo deve admitir derrota e solicitar o animal correto após 3 erros.
@@ -49,10 +49,10 @@ Deferred to future release.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | CORE-01 | Phase 1 | Complete |
-| CORE-02 | Phase 1 | Pending |
-| CORE-03 | Phase 1 | Pending |
-| CORE-04 | Phase 2 | Pending |
-| GAME-01 | Phase 2 | Pending |
+| CORE-02 | Phase 1 | Complete |
+| CORE-03 | Phase 1 | Complete |
+| CORE-04 | Phase 2 | Complete |
+| GAME-01 | Phase 2 | Complete |
 | GAME-02 | Phase 3 | Pending |
 | GAME-03 | Phase 3 | Pending |
 | GAME-04 | Phase 3 | Pending |

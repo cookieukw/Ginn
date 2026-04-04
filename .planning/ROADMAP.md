@@ -6,7 +6,7 @@ A jornada do Magic Jinn começa com a estruturação do conhecimento dos animais
 ## Phases
 
 - [x] **Phase 1: Fundação e Dados** - Setup do parser de animais e estrutura de dados. (completed 2026-04-04)
-- [ ] **Phase 2: Motor de Decisão** - Implementação do algoritmo de entropia e lógica de filtragem.
+- [x] **Phase 2: Motor de Decisão** - Implementação do algoritmo de entropia e lógica de filtragem. (completed 2026-04-04)
 - [ ] **Phase 3: Shell da Interface** - Criação da estrutura HTML/CSS com Glassmorphism.
 - [ ] **Phase 4: Personagem e Feedback** - Animações do Jinn e sistema de diálogos em Português.
 - [ ] **Phase 5: Integração e Polimento** - Loop 10+5+5 completo e refinamentos visuais.
@@ -37,7 +37,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Implementar algoritmo de Entropia (Shannon Entropy).
+- [x] 02-01: Implementar algoritmo de Entropia (Shannon Entropy).
 - [ ] 02-02: Implementar lógica de filtragem probabilística para incertezas.
 
 ### Phase 3: Shell da Interface
@@ -83,7 +83,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Fundação e Dados | 1/1 | Complete    | 2026-04-04 |
-| 2. Motor de Decisão | 0/2 | Not started | - |
+| 2. Motor de Decisão | 1/1 | Complete   | 2026-04-04 |
 | 3. Shell da Interface | 0/1 | Not started | - |
 | 4. Personagem e Feedback | 0/2 | Not started | - |
 | 5. Integração e Polimento | 0/1 | Not started | - |
