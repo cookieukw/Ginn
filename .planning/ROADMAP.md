@@ -82,7 +82,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação e Dados | 1/1 | Complete   | 2026-04-04 |
+| 1. Fundação e Dados | 1/1 | Complete    | 2026-04-04 |
 | 2. Motor de Decisão | 0/2 | Not started | - |
 | 3. Shell da Interface | 0/1 | Not started | - |
 | 4. Personagem e Feedback | 0/2 | Not started | - |
