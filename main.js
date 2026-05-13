@@ -56,7 +56,7 @@ function showJinnMessage(text) {
   dialogueBubble.classList.remove('pop-anim');
   void dialogueBubble.offsetWidth; 
   dialogueBubble.classList.add('pop-anim');
-  jinnText.innerText = text;
+  jinnText.textContent = text;
 }
 
 function updateUI() {
@@ -84,12 +84,12 @@ function updateUI() {
     if (q.type === 'GUESS') {
       controls.classList.add('hidden');
       guessControls.classList.remove('hidden');
-      questionText.innerText = q.text;
+      questionText.textContent = q.text;
     } else {
       controls.classList.remove('hidden');
       guessControls.classList.add('hidden');
-      questionText.innerText = q.text;
-      counter.innerText = `Pergunta: ${controller.questionCount}/${controller.getNextLimit()}`;
+      questionText.textContent = q.text;
+      counter.textContent = `Pergunta: ${controller.questionCount}/${controller.getNextLimit()}`;
     }
   }, 500);
 }
@@ -102,13 +102,13 @@ function handleEndGame() {
   endScreen.classList.remove('hidden');
 
   if (controller.isWin) {
-    endTitle.innerText = "Vitória do Jinn!";
-    endMessage.innerText = "Eu sabia! Minha inteligência é insuperável, miau!";
+    endTitle.textContent = 'Vitória do Jinn!';
+    endMessage.textContent = 'Eu sabia! Minha inteligência é insuperável, miau!';
     jinnImg.classList.add('win-aura');
     lossContainer.classList.add('hidden');
   } else {
-    endTitle.innerText = "Você Venceu...";
-    endMessage.innerText = "Inacreditável... você é um mestre dos animais! Mas qual animal era?";
+    endTitle.textContent = 'Você Venceu...';
+    endMessage.textContent = 'Inacreditável... você é um mestre dos animais! Mas qual animal era?';
     jinnImg.classList.add('loss-aura');
     lossContainer.classList.remove('hidden');
   }
@@ -133,7 +133,7 @@ btnGuessNo.addEventListener('click', () => {
     updateUI();
 });
 
-// Event Listeners
+// Botões de resposta (Sim / Não / Não Sei)
 document.querySelectorAll('.glass-button[data-response]').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const response = parseFloat(e.target.dataset.response);
