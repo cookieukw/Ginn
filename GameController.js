@@ -1,18 +1,27 @@
 import DialogueManager from './DialogueManager.js';
 
+// Limites de perguntas antes de cada tentativa de palpite.
+// Index 0 → 1º palpite, Index 1 → 2º palpite, Index 2 → 3º palpite.
+const GUESS_THRESHOLDS = [15, 20, 25];
+
 export default class GameController {
   constructor(store, engine) {
     this.store = store;
     this.engine = engine;
     this.dialogue = new DialogueManager();
-    
+
     this.state = 'INIT';
     this.questionCount = 0;
-    this.guessHistory = new Set();
-    this.maxGuesses = 3;
-    this.guessThresholds = [15, 20, 25];
+    this.maxGuesses = GUESS_THRESHOLDS.length;
     this.currentGuessIndex = 0;
-    
+
+    /**
+     * null  → jogo ainda não terminou
+     * true  → Jinn acertou
+     * false → usuário venceu
+     */
+    this.isWin = null;
+
     this.currentQuestion = null;
   }
 
@@ -29,36 +38,41 @@ export default class GameController {
     }
 
     this.currentQuestion = featureKey;
-    return { type: 'QUESTION', key: featureKey, text: this.dialogue.getQuestionText(featureKey) };
+    return {
+      type: 'QUESTION',
+      key: featureKey,
+      text: this.dialogue.getQuestionText(featureKey),
+    };
   }
 
   answerQuestion(featureKey, response) {
     // response: 1=Sim, 0=Não, 0.5=Não Sei
     if (response === 0.5) {
-      // "Não Sei" -> ignora a pergunta (muda pra outra)
+      // "Não Sei" → ignora a feature e passa para outra pergunta
       this.engine.ignoreFeature(featureKey);
     } else {
       this.store.filter(featureKey, response);
       this.questionCount++;
     }
 
-    // Verificar se atingimos o limite de perguntas para palpite
-    const nextLimit = this.guessThresholds[this.currentGuessIndex];
+    const nextLimit = GUESS_THRESHOLDS[this.currentGuessIndex];
     if (this.questionCount >= nextLimit || this.store.getCandidateCount() <= 1) {
       this.state = 'GUESSING';
     }
   }
 
-  getGuessLine() {
-    const candidates = this.store.activeCandidates;
-    const guess = candidates[0]; // Melhor chute é o primeiro (ou único)
-    if (!guess) return "Eu me rendo! Não consegui descobrir.";
-    
-    return this.dialogue.getGuessLine(guess.name);
+  /**
+   * Retorna o animal candidato com maior probabilidade (primeiro da lista filtrada).
+   * @returns {object|null}
+   */
+  getGuess() {
+    return this.store.activeCandidates[0] ?? null;
   }
 
-  getGuess() {
-    return this.store.activeCandidates[0];
+  getGuessLine() {
+    const guess = this.getGuess();
+    if (!guess) return 'Eu me rendo! Não consegui descobrir.';
+    return this.dialogue.getGuessLine(guess.name);
   }
 
   getState() {
@@ -67,18 +81,7 @@ export default class GameController {
   }
 
   getNextLimit() {
-    return this.guessThresholds[this.currentGuessIndex] || 20;
-  }
-
-  reset() {
-    this.store.reset();
-    this.engine.reset();
-    this.state = 'INIT';
-    this.questionCount = 0;
-    this.guessThresholds = [15, 20, 25];
-    this.currentGuessIndex = 0;
-    
-    this.currentQuestion = null;
+    return GUESS_THRESHOLDS[this.currentGuessIndex] ?? GUESS_THRESHOLDS.at(-1);
   }
 
   handleGuessResponse(isCorrect) {
@@ -86,22 +89,31 @@ export default class GameController {
       this.state = 'WIN';
       this.isWin = true;
       return this.dialogue.getWinLine();
-    } else {
-      const wrongGuess = this.getGuess();
-      if (wrongGuess) {
-        this.store.removeCandidate(wrongGuess.name);
-      }
-      
-      this.currentGuessIndex++;
-      if (this.currentGuessIndex >= this.maxGuesses) {
-        this.state = 'LOSS';
-        this.isWin = false;
-        return this.dialogue.getLossLine();
-      } else {
-        this.state = 'QUESTIONING';
-        return this.dialogue.getWrongGuessLine();
-      }
     }
+
+    const wrongGuess = this.getGuess();
+    if (wrongGuess) {
+      this.store.removeCandidate(wrongGuess.name);
+    }
+
+    this.currentGuessIndex++;
+    if (this.currentGuessIndex >= this.maxGuesses) {
+      this.state = 'LOSS';
+      this.isWin = false;
+      return this.dialogue.getLossLine();
+    }
+
+    this.state = 'QUESTIONING';
+    return this.dialogue.getWrongGuessLine();
+  }
+
+  reset() {
+    this.store.reset();
+    this.engine.reset();
+    this.state = 'INIT';
+    this.questionCount = 0;
+    this.currentGuessIndex = 0;
+    this.isWin = null;
+    this.currentQuestion = null;
   }
 }
-
