@@ -81,14 +81,7 @@ export default class DialogueManager {
   }
 
   getWrongGuessLine() {
-    const lines = [
-      'Não? Impossível... meus cálculos miau-gráficos falharam? Continuarei!',
-      'Errei? Você está tentando me enganar? Vou descobrir a verdade!',
-      'Miau! Essa foi difícil... mas ainda tenho cartas na manga.',
-      'Hum... entendo. Deixe-me pensar mais um pouco então.',
-      'Interessante... você quase me pegou, mas eu vou vencer!'
-    ];
-    return lines[Math.floor(Math.random() * lines.length)];
+    return this.getRandom(this.wrongGuessLines);
   }
 
   getWinLine() {
